@@ -22,5 +22,12 @@ RSpec.describe Article, type: :model do
       Article.create(title: 'article 2', body: 'article 2', status: 'public')
       expect(Article.count).to eq 2
     end
+
+    it do
+      Article.create(title: 'article 1', body: 'article 1', status: 'public')
+      Article.create(title: 'article 1', body: 'article 1', status: 'public')
+      Article.create(title: 'article 3', body: 'article 3', status: 'public')
+      expect(Article.count).to eq 3
+    end
   end
 end
